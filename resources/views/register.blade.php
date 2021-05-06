@@ -37,32 +37,45 @@
                                 <h1 class="h4 text-gray-900 mb-4">Buat Akun SIASMADES!</h1>
                             </div>
                             <hr>
-                            <form class="user">
+                            <form class="user" action="{{ route('register') }}" method="post">
+                            @csrf
+                            @if(session('errors'))
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                                </ul>
+                            </div>
+                            @endif
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nama Lengkap">
+                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" name="name" placeholder="Nama Lengkap">
                                 </div>
                                 <hr>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" name="email"
                                         placeholder="Alamat email">
                                 </div>
                                 <hr>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
+                                        <input type="password" class="form-control form-control-user" name="password"
                                             id="exampleInputPassword" placeholder="Kata Sandi">
                                     </div>
                                     <hr>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
+                                        <input type="password" class="form-control form-control-user" name="password_confirmation"
                                             id="exampleRepeatPassword" placeholder="Ulangi Kata Sandi">
                                     </div>
                                     <hr>
                                 </div>
                                 <hr>
-                                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
                                     Daftar
-                                </a>
+                                </button>
                                 <hr>
                             </form>
                             <!-- <div class="text-center">

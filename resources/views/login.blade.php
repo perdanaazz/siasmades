@@ -43,15 +43,38 @@
                                         <h1 class="h4 text-gray-900 mb-4">Selamat Datang Kembali</h1>
                                     </div>
                                     <hr>
-                                    <form class="user">
+                                    <form class="user" action="{{ route('login') }}" method="post">
+                                    @csrf
+                                    @if(session('errors'))
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                            <ul>
+                                            @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                            @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+                                    @if (Session::has('success'))
+                                        <div class="alert alert-success">
+                                            {{ Session::get('success') }}
+                                        </div>
+                                    @endif
+                                    @if (Session::has('error'))
+                                        <div class="alert alert-danger">
+                                            {{ Session::get('error') }}
+                                        </div>
+					                @endif
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+                                            <input type="email" class="form-control form-control-user" name="email"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Masukkan alamat email">
                                         </div>
                                         <hr>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
+                                            <input type="password" class="form-control form-control-user" name="password"
                                                 id="exampleInputPassword" placeholder="Kata sandi">
                                         </div>
                                         <!-- <div class="form-group">
@@ -62,9 +85,9 @@
                                             </div>
                                         </div> -->
                                         <hr>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
-                                        </a>                                        
+                                        </button>                                        
                                     </form>
                                     <hr>
                                     <!-- <div class="text-center">
