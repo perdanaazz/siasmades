@@ -16,7 +16,7 @@
         <!-- Third party plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet"/>
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -30,8 +30,8 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Pelayanan</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Galery</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Kontak</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/register">Register</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/login">Login</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Register</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Login</a></li>
                     </ul>
                 </div>
             </div>

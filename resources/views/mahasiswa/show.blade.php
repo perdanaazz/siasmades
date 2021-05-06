@@ -30,11 +30,11 @@
         <ul>
             <img class="rounded-circle" width="100px" src="{{ url('/img/'.$mahasiswa->foto) }}">
             <br><br>
-            <li>NIM: {{$mahasiswa->nim}} </li>
-            <li>Nama: {{$mahasiswa->nama}} </li>
-            <li>Jenis Kelamin: {{$mahasiswa->jenis_kelamin == 'P' ? 'Perempuan' : 'Laki-laki'}}</li>
-            <li>Jurusan: {{$mahasiswa->jurusan}} </li>
-            <li>Alamat: {{$mahasiswa->alamat == '' ? 'N/A' : $mahasiswa->alamat}}</li>
+            <li>ID barang: {{$mahasiswa->nim}} </li>
+            <li>Nama barang: {{$mahasiswa->nama}} </li>
+            <!-- <li>Jenis Kelamin: {{$mahasiswa->jenis_kelamin == 'P' ? 'Perempuan' : 'Laki-laki'}}</li> -->
+            <li>Harga barang: {{$mahasiswa->harga}} </li>
+            <!-- <li>Alamat: {{$mahasiswa->alamat == '' ? 'N/A' : $mahasiswa->alamat}}</li> -->
             <br>
             <a href="{{ route('mahasiswas.index') }}" class="btn btn-primary" aria-disabled="true">Kembali</a>
         </ul>

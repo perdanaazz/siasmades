@@ -12,7 +12,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light mt-2" style="background-color: #f0072a;">
     <div class="container-fluid m-3">
-        <a class="navbar-brand text-white" href="#">UMKM PANIK || PANIK.COM</a>
+        <a class="navbar-brand text-white" href="{{ route('welcome') }}">UMKM PANIK || PANIK.COM</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,49 +25,46 @@
             <a class="nav-link text-white" href="#">Katalog</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('mahasiswas.create') }}">Tambah data</a>
+            <!-- <a class="nav-link text-white" href="{{ route('mahasiswas.create') }}">Tambah data</a>
             </li>
             <li class="nav-item">
             <a class="nav-link text-white" href="{{ route('mahasiswas.create') }}">Hapus data</a>
-            </li>
+            </li> -->
             <li class="nav-item">
-                <a href="{{ route('logout') }}" class="form-inline my-2 my-lg-0 btn btn-danger">Logout</a>
+            <a href="{{ route('logout') }}" class="nav-link text-white">Logout</a>
             </li>
         </ul>
     </div>
 </nav>
 <div class="container mt-2">
-    <div class="row">
-        <div class="col-8"></div>
-        <div class="col-4">
-            <div class="container-fluid mt-2">
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Cari Produk" aria-label="Search">
-                    <button class="btn btn-danger ml-2" type="submit">Cari Produk</button>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <div class="row">
-        <div class="col-3">
+        <div class="col-2">
             <div class="btn-group-vertical">
-                <button type="button" class="btn btn-danger">Urutkan berdasarkan nama</button>
-                <button type="button" class="btn btn-danger mt-2">Urutkan berdasarkan harga</button>
+                <a type="a" class="btn btn-danger" href="{{ route('mahasiswas.create') }}">Tambah data</a>
+                <a type="a" class="btn btn-danger" href="/mahasiswas-delete">Hapus data</a>
+                <a type="a" class="btn btn-danger" href="/sortbynama">Sort by nama</a>
+                <a type="a" class="btn btn-danger" href="/sortbyharga">Sort by harga</a>
             </div>
         </div>
         <div class="col-8">
         @forelse ($mahasiswas as $mahasiswa)
-            <div class="card d-inline-block" style="width: 12rem;">
-                <img src="{{ url('/img/'.$mahasiswa->foto) }}" class="card-img-top" widht="150px">
+            <div class="card d-inline-block mb-5" style="width: 12rem; height: 22rem">
+                <img src="{{ url('/img/'.$mahasiswa->foto) }}" class="card-img-top" widht="150px" height="150px">
                 <div class="card-body">
                     <h6 class="card-title">{{$mahasiswa->nama}}</h6>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{$mahasiswa->jenis_kelamin == 'P'?'Perempuan' : 'Laki-laki'}}</li>
-                    <li class="list-group-item">{{$mahasiswa->jurusan}}</li>
-                    <li class="list-group-item">{{$mahasiswa->alamat == '' ? 'N/A' : $mahasiswa->alamat}}</li>
+                    <!-- <li class="list-group-item">{{$mahasiswa->jenis_kelamin == 'P'?'Perempuan' : 'Laki-laki'}}</li> -->
+                    <li class="list-group-item">{{$mahasiswa->harga}}</li>
+                    <!-- <li class="list-group-item">{{$mahasiswa->alamat == '' ? 'N/A' : $mahasiswa->alamat}}</li> -->
                 </ul>
+                <a href="{{ route('mahasiswas.edit',['mahasiswa'=>$mahasiswa->id]) }}" class="btn btn-primary">Edit</a>
+                <form action="{{ route('mahasiswas.destroy',['mahasiswa'=>$mahasiswa->id]) }}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" class="btn btn-danger">Hapus</button>
+                </form>
             </div>
         @empty
         @endforelse

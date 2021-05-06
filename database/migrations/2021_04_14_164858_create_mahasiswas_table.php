@@ -17,10 +17,10 @@ class CreateMahasiswasTable extends Migration
             $table->id();
             $table->char('nim',8)->unique();
             $table->string('nama');
-            $table->char('jenis_kelamin',1);
-            $table->string('jurusan');
+            // $table->char('jenis_kelamin',1);
+            $table->string('harga');
             $table->string('foto')->nullable();
-            $table->text('alamat')->nullable();
+            // $table->text('alamat')->nullable();
             $table->timestamps();
         });
     }

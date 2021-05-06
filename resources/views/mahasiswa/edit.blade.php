@@ -17,20 +17,27 @@
                 @method('PATCH')
                 @csrf
                 <div class="form-group">
-                    <label for="nim">NIM</label>
+                    <label for="nim">ID barang</label>
                     <input type="text" class="form-control @error('nim') is-invalid @enderror" id="nim" name="nim" value="{{ old('nim') ?? $mahasiswa->nim }}">
                     @error('nim')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="nama">Nama Lengkap</label>
+                    <label for="nama">Nama barang</label>
                     <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" value="{{ old('nama') ?? $mahasiswa->nama }}">
                     @error('nama')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group">
+                    <label for="harga">Harga barang</label>
+                    <input type="text" class="form-control @error('harga') is-invalid @enderror" id="harga" name="harga" value="{{ old('harga') ?? $mahasiswa->harga }}">
+                    @error('harga')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <!-- <div class="form-group">
                     <label>Jenis Kelamin</label>
                     <div>
                         <div class="form-check form-check-inline">
@@ -58,7 +65,7 @@
                     @error('jurusan')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label for="foto">Foto</label>
                     <input type="file" class="form-control-file @error('foto') is-invalid @enderror" name="foto" id="foto" value="{{old('foto') ?? $mahasiswa->foto }}">
@@ -66,10 +73,10 @@
                         <div class="text-danger">{{$message}}</div>
                     @enderror
                 </div>                
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="alamat">Alamat</label>
                     <textarea class="form-control" id="alamat" rows="3" name="alamat">{{ old('alamat') ?? $mahasiswa->alamat}}</textarea>
-                </div>
+                </div> -->
                 <button type="submit" class="btn btn-primary mb-2">Update</button>
             </form>
         </div>
