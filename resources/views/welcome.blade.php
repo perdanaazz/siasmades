@@ -27,7 +27,8 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Tentang</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Pelayanan</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#penawaran">Penawaran</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#pelayanan">Pelayanan</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Galery</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Kontak</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/register">Register</a></li>
@@ -65,7 +66,7 @@
             </div>
         </section>
         <!-- Services-->
-        <section class="page-section" id="services">
+        <section class="page-section" id="penawaran">
             <div class="container">
                 <h2 class="text-center mt-0">APA YANG DI TAWARKAN SIASMADES?</h2>
                 <hr class="divider my-4" />
@@ -96,6 +97,42 @@
                             <i class="fas fa-4x fa-lock text-primary mb-4"></i>
                             <h3 class="h4 mb-2">Keamanan</h3>
                             <p class="text-muted mb-0">Informasi data diri akan dienkripsi dan disimpan secara penuh sehingga tidak perlu khawatir data bocor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Pelayanan -->
+        <section class="page-section" id="pelayanan">
+            <div class="container" style="margin-bottom: 7rem">
+                <h2 class="text-center">LAYANAN SIASMADES</h2>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-keyboard text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Saran dan Masukan</h3><br>
+                            <p class="text-muted mb-0">Masyarakat bisa menulis saran dan masukan untuk desanya tanpa harus ribet ke kantor desa dan menemui kepala desa.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-upload text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Pengajuan Proposal Pembangunan Desa</h3>
+                            <p class="text-muted mb-0">Proposal pembangunan desa bisa diajukan oleh seluruh masyarakat desa tanpa terkecuali.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-graduation-cap text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Pengajuan Beasiswa</h3><br>
+                            <p class="text-muted mb-0">Bagi masyarakat yang berprestasi seperti pelajar bisa mengajukan apresiasi beasiswa kepada desa.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-credit-card text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Pengajuan Bantuan</h3><br>
+                            <p class="text-muted mb-0">Masyarakat yang kurang mampu dapat mengajukan bantuan lewat SIASMADES dengan syarat dan ketentuan yang berlaku.</p>
                         </div>
                     </div>
                 </div>
