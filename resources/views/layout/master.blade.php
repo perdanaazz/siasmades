@@ -208,52 +208,6 @@
 </nav>
             </div>
 
-            <div class="jumbotron" >
-                <div class="container">
-                    <div class="row">
-                        <div class="col-7">
-                            <h1 class="display-4">SELAMAT DATANG DI SIASMADES</h1>
-                            <p class="lead">Sistem informasi masyarakat desa untuk menyampaikan aspirasi berupa saran dan masukan, berkas proposal pembangunan desa, pengajuan beasiswa dan pengajuan bantuan masyarakat</p>
-                            <hr class="my-4">
-                        </div>
-                    <div class="col-5 text-center" >
-                        <p></p>
-                        <img src="assets/img/Lambang.png" alt="image" height="200" width="398" >
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <footer class="bg-dark py-4 text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-lg-4 footer-about wow fadeInUp">
-                    <h3>About Us</h3>
-                    <p>
-                        Siasmades adalah Sebuah Sistem informasi yang melayani para masyarakat desa untuk bisa menampung aspirasi dan memperbudah proses persuratan sehingga
-                        aspirasi masyarakat desa bisa tersampaikan.
-                    </p>
-                </div>
-                <div class="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown">
-                    <h3>Contact</h3>
-                    <p><i class="fas fa-map-marker-alt"></i>  Jl. Semarang No.5, Sumbersari, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145</p>
-                    <p><i class="fas fa-phone"></i> Phone: 0815-1458-6047</p>
-                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:siasmades@gmail.com">siasmades@gmail.com</a></p>
-                </div>
-                <div class="col-md-4 col-lg-3 footer-social wow fadeInUp">
-                    <h3>Follow us</h3>
-                    <p>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
