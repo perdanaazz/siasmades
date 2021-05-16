@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -31,7 +30,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/mahasiswas">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -43,37 +42,14 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Aspirasi Masyarakat
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <span>Saran dan masukan</span>
-                </a>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <span>Berkas proposal pembangunan</span>
-                </a>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <span>Berkas beasiswa</span>
-                </a>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <span>Berkas bantuan masyarakat</span>
-                </a>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">
+                    <i></i>
+                    <span>Aspirasi Masyarakat</span></a>
             </li>
             
             <!-- Divider -->
@@ -84,6 +60,10 @@
                 Fungsi
             </div>
             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <span>Urutkan berdasarkan kategori</span>
+                </a>
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <span>Urutkan berdasarkan nama</span>
@@ -207,7 +187,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-lg-4 footer-about wow fadeInUp">
-                    <h3>About Us</h3>
+                    <h3>Tentang kami</h3>
                     <p>
                         Siasmades adalah Sebuah Sistem informasi yang melayani para masyarakat desa untuk bisa menampung aspirasi dan memperbudah proses persuratan sehingga
                         aspirasi masyarakat desa bisa tersampaikan.
@@ -232,6 +212,7 @@
             </div>
         </div>
     </footer>
+    
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

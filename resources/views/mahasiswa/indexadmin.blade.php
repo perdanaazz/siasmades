@@ -1,5 +1,5 @@
-@extends('layout.member')
-@section('title', 'Member SIASMADES')
+@extends('layout.admin')
+@section('title', 'Admin SIASMADES')
 
 @section('content')
 <div class="jumbotron" >

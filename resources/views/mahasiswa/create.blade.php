@@ -36,36 +36,6 @@
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-                <!-- <div class="form-group">
-                    <label>Jenis Kelamin</label>
-                    <div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jenis_kelamin" id="laki_laki" value="L" {{ old('jenis_kelamin')=='L' ? 'checked': '' }} >
-                            <label class="form-check-label" for="laki_laki">Laki-laki</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jenis_kelamin" id="perempuan" value="P" {{ old('jenis_kelamin')=='P' ? 'checked': '' }} >
-                            <label class="form-check-label" for="perempuan">Perempuan</label>
-                        </div>
-                        @error('jenis_kelamin')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="jurusan">Jurusan</label>
-                    <select class="form-control" name="jurusan" id="jurusan">
-                        <option value="">Pilih Jurusan</option>
-                        <option value="Teknik Informatika" {{ old('jurusan')=='Teknik Informatika' ? 'selected': '' }} >Teknik Informatika</option>
-                        <option value="Sistem Informasi" {{ old('jurusan')=='Sistem Informasi' ? 'selected': '' }} >Sistem Informasi</option>
-                        <option value="Ilmu Komputer" {{ old('jurusan')=='Ilmu Komputer' ? 'selected': '' }} >Ilmu Komputer</option>
-                        <option value="Teknik Komputer" {{ old('jurusan')=='Teknik Komputer' ? 'selected': '' }} >Teknik Komputer</option>
-                        <option value="Teknik Telekomunikasi" {{ old('jurusan')=='Teknik Telekomunikasi' ? 'selected': '' }} >Teknik Telekomunikasi</option>
-                    </select>
-                    @error('jurusan')
-                        <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div> -->
                 <div class="form-group">
                     <label for="foto">Foto</label>
                     <input type="file" class="form-control-file @error('foto') is-invalid @enderror" name="foto" id="foto" value="{{old('foto')}}">
@@ -73,11 +43,6 @@
                         <div class="text-danger">{{$message}}</div>
                     @enderror
                 </div>
-                <!-- <div class="form-group">
-                    <label for="alamat">Alamat</label>
-                    <textarea class="form-control" id="alamat" rows="3" name="alamat">{{ old('alamat') }}</textarea>
-                </div> -->
-
                 <button type="submit" class="btn btn-primary mb-2">Daftar</button>
             </form>
         </div>
