@@ -29,7 +29,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Tentang</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#penawaran">Penawaran</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#pelayanan">Pelayanan</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Galery</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Galeri</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Kontak</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/register">Register</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/login">Login</a></li>
@@ -46,7 +46,7 @@
                         <hr class="divider my-4" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 font-weight-light mb-5">Sistem informasi masyarakat desa (SIASMADES) merupakan sistem informasi untuk masyarakat desa agar mudah untuk menyampaikan aspirasinya berupa kritik dan saran, unggah berkas proposal pembangunan desa, unggah berkas apresiasi beasiswa dan unggah berkas pengajuan bantuan masyarakat.</p>
+                        <p class="text-white-75 font-weight-light mb-5">Sistem informasi masyarakat desa (SIASMADES) merupakan sistem informasi untuk masyarakat desa agar mudah untuk menyampaikan aspirasinya berupa pengajuan surat pengantar KTP, pengajuan surat keterangan penghasilan, dan surat keterangan tidak mampu.</p>
                         <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Temukan lebih banyak lagi</a>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                     <div class="col-lg-8 text-center">
                         <h2 class="text-white mt-0">KELEBIHAN UTAMA</h2>
                         <hr class="divider light my-4" />
-                        <p class="text-white-50 mb-4">Sistem informasi ini mampu melakukan pengunggahan fail secara digital dan terintegrasi dengan basis data berkeamanan tinggi sehingga tidak perlu takut data bocor, pemprosesan secara <i>realtime</i>, dan dapat di akses 24 jam kapanpun dan dimanapun. Sistem ini bersifat multi platform, mudah di gunakan, serta informasi yang di bagikan akurat dan tepat.</p>
+                        <p class="text-white-50 mb-4">Sistem informasi ini mampu melakukan pengunggahan fail secara digital dan terintegrasi dengan basis data berkeamanan tinggi sehingga tidak perlu takut data bocor, pemprosesan secara <i>realtime</i>, dan dapat di akses 24 jam kapanpun dan dimanapun. Sistem ini bersifat <i>multiplatform</i> karena berbasis web, mudah digunakan, serta informasi yang dibagikan akurat dan tepat.</p>
                         <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">MULAI</a>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
         <section class="page-section" id="penawaran">
             <div class="container">
                 <h2 class="text-center mt-0">APA YANG DI TAWARKAN SIASMADES?</h2>
-                <hr class="divider my-4" />
+                <hr class="divider my-4"/>
                 <div class="row">
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
@@ -104,34 +104,27 @@
         </section>
         <!-- Pelayanan -->
         <section class="page-section" id="pelayanan">
-            <div class="container" style="margin-bottom: 7rem">
+            <div class="container">
                 <h2 class="text-center">LAYANAN SIASMADES</h2>
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 text-center">
+                    <div class="col-lg-4 col-md-6 text-center">
                         <div class="mt-5">
-                            <i class="fas fa-4x fa-keyboard text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Saran dan Masukan</h3><br>
-                            <p class="text-muted mb-0">Masyarakat bisa menulis saran dan masukan untuk desanya tanpa harus ribet ke kantor desa dan menemui kepala desa.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <i class="fas fa-4x fa-upload text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Pengajuan Proposal Pembangunan Desa</h3>
+                            <i class="fas fa-4x fa-credit-card text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Pengajuan Surat Pengantar KTP</h3><br>
                             <p class="text-muted mb-0">Proposal pembangunan desa bisa diajukan oleh seluruh masyarakat desa tanpa terkecuali.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 text-center">
+                    <div class="col-lg-4 col-md-6 text-center">
                         <div class="mt-5">
                             <i class="fas fa-4x fa-graduation-cap text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Pengajuan Beasiswa</h3><br>
+                            <h3 class="h4 mb-2">Pengajuan Surat Keterangan Penghasilan</h3><br>
                             <p class="text-muted mb-0">Bagi masyarakat yang berprestasi seperti pelajar bisa mengajukan apresiasi beasiswa kepada desa.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 text-center">
+                    <div class="col-lg-4 col-md-6 text-center">
                         <div class="mt-5">
                             <i class="fas fa-4x fa-credit-card text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Pengajuan Bantuan</h3><br>
+                            <h3 class="h4 mb-2">Pengajuan Surat Keterangan Tidak Mampu (SKTM)</h3><br>
                             <p class="text-muted mb-0">Masyarakat yang kurang mampu dapat mengajukan bantuan lewat SIASMADES dengan syarat dan ketentuan yang berlaku.</p>
                         </div>
                     </div>

@@ -79,8 +79,9 @@
                         <div class="text-danger">{{$message}}</div>
                     @enderror
                 </div>
-                <a class="btn btn-primary mb-2" href="{{url('/')}}" role="button">Back</a>
-                <button type="submit" class="btn btn-primary mb-2 float-right">Submit</button>
+                <a class="btn btn-warning mb-2" href="{{url('/')}}" role="button">Back</a>
+                <a class="btn btn-danger mb-2" href="{{url('/')}}" role="button">Hapus Form</a>
+                <button type="submit" class="btn btn-primary mb-2 float-right">Kirim</button>
             </form>
         </div>
     </div>
