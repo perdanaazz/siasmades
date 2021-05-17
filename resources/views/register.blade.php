@@ -37,7 +37,7 @@
                                 <h1 class="h4 text-gray-900 mb-4">Buat Akun SIASMADES!</h1>
                             </div>
                             <hr>
-                            <form class="user" action="{{ route('register') }}" method="post">
+                            <form class="user" action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @if(session('errors'))
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -71,6 +71,11 @@
                                             id="exampleRepeatPassword" placeholder="Ulangi Kata Sandi">
                                     </div>
                                     <hr>
+                                </div>
+                                <hr>
+                                <div class="form-group">
+                                    <label for="foto">Foto Profil</label>
+                                    <input type="file" class="form-control-file" name="foto" id="foto">
                                 </div>
                                 <hr>
                                 <button type="submit" class="btn btn-primary btn-user btn-block">

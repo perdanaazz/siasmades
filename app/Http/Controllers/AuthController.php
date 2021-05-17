@@ -77,7 +77,8 @@ class AuthController extends Controller
         $rules = [
             'name'                  => 'required|min:3|max:35',
             'email'                 => 'required|email|unique:users,email',
-            'password'              => 'required|confirmed'
+            'password'              => 'required|confirmed',
+            'foto'                  => 'required|file|image|max:5000'
         ];
 
         $messages = [
@@ -88,7 +89,10 @@ class AuthController extends Controller
             'email.email'           => 'Email tidak valid',
             'email.unique'          => 'Email sudah terdaftar',
             'password.required'     => 'Password wajib diisi',
-            'password.confirmed'    => 'Password tidak sama dengan konfirmasi password'
+            'password.confirmed'    => 'Password tidak sama dengan konfirmasi password',
+            'file'                  => ':attribute harus diisi dengan file',
+            'image'                 => ':attribute harus berupa gambar',
+            'foto.required'         => 'Foto profil harus diisi'
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -102,6 +106,14 @@ class AuthController extends Controller
         $user->email = strtolower($request->email);
         $user->password = Hash::make($request->password);
         $user->email_verified_at = \Carbon\Carbon::now();
+        
+        //avatar
+        $file = $request->foto;
+        $extension = $file->getClientOriginalExtension();
+        $filename = 'mhs-'.time() . '.' . $extension;
+        $file->move(public_path().'/img/avatar',$filename);
+        $user->foto = $filename;
+        
         $simpan = $user->save();
 
         if($simpan){

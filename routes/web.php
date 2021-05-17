@@ -13,8 +13,13 @@ Route::post('register', [AuthController::class, 'register']);
 
 //Auth Routes
 Route::group(['middleware' => 'auth'],function(){
-    Route::get('/mahasiswas',[MahasiswaController::class,'index'])->name('mahasiswas.index');
-    Route::get('/mahasiswas/create',[MahasiswaController::class,'create'])->name('mahasiswas.create');
+    Route::get('/siasmades',[MahasiswaController::class,'index'])->name('mahasiswas.index');
+    //view pengajuan
+    Route::view('/ktpform', 'ktpform');
+    Route::view('/penghasilanform', 'penghasilanform');
+    Route::view('/sktmform', 'sktmform');
+    Route::get('/pengajuan', [MahasiswaController::class, 'pengajuan'])->name('siasmades.pengajuan');
+    //script
     Route::post('/mahasiswas',[MahasiswaController::class,'store'])->name('mahasiswas.store');
     Route::get('/mahasiswas/{mahasiswa}',[MahasiswaController::class,'show'])->name('mahasiswas.show');
     Route::get('/mahasiswas/{mahasiswa}/edit',[MahasiswaController::class,'edit'])->name('mahasiswas.edit');
@@ -26,9 +31,4 @@ Route::group(['middleware' => 'auth'],function(){
     Route::get('/sortbynama', [MahasiswaController::class, 'sortynama']);
     Route::get('/sortbytanggal', [MahasiswaController::class, 'sortytanggal']);
     Route::get('/sortbykategori', [MahasiswaController::class, 'sortykategori']);
-    //pengajuan
-    Route::view('/ktpform', 'ktpform');
-    Route::view('/penghasilanform', 'penghasilanform');
-    Route::view('/sktmform', 'sktmform');
-    Route::view('/pengajuan', 'rekap-pengajuan');
 });

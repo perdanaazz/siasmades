@@ -13,25 +13,23 @@ use App\Models\User;
 
 class MahasiswaController extends Controller
 {
-    public function home(){
-        return view('mahasiswa.home');
-    }
     public function index(){
+        $users = User::all();
         $mahasiswas = Mahasiswa::all();
-        return view('mahasiswa.index',['mahasiswas' => $mahasiswas]);
-    }
-    public function create(){
-        return view('mahasiswa.create');
+        return view('mahasiswa.index',[
+            'users' => $users,
+            'mahasiswas' => $mahasiswas
+        ]);
     }
     public function store(Request $request){
         $validateData = $request->validate([
-            'nim' => 'required|size:8|unique:mahasiswas',
+            'nik' => 'required|size:16|unique:mahasiswas',
             'nama' => 'required|min:3|max:50',
-            // 'jenis_kelamin' => 'required|in:P,L',
-            // 'jurusan' => 'required',
-            'harga' => 'required',
+            'email' => 'required',
+            'jenis_kelamin' => 'required|in:P,L',
+            'alamat' => 'required',
+            'kategori' => 'required',
             'foto' => 'required|file|image|max:5000',
-            // 'alamat' => '',
         ],
         [
             'required' => ':attribute wajib diisi',
@@ -43,35 +41,31 @@ class MahasiswaController extends Controller
             'image' => ':attribute harus berupa gambar',
         ]);
         $mahasiswa = new Mahasiswa();
-        $mahasiswa->nim = $validateData['nim'];
+        $mahasiswa->nik = $validateData['nik'];
         $mahasiswa->nama = $validateData['nama'];
-        // $mahasiswa->jenis_kelamin = $validateData['jenis_kelamin'];
-        // $mahasiswa->jurusan = $validateData['jurusan'];
-        // $mahasiswa->alamat = $validateData['alamat'];
-        $mahasiswa->harga = $validateData['harga'];
+        $mahasiswa->email = $validateData['email'];
+        $mahasiswa->jenis_kelamin = $validateData['jenis_kelamin'];
+        $mahasiswa->alamat = $validateData['alamat'];
+        $mahasiswa->kategori = $validateData['kategori'];
         $file = $validateData['foto'];
         $extension = $file->getClientOriginalExtension();
         $filename = 'mhs-'.time() . '.' . $extension;
         $file->move(public_path().'/img',$filename);
         $mahasiswa->foto = $filename;
-        // if($request->hasFile('foto')){
-        //     $file = $validateData['foto'];
-        //     $extension = $file->getClientOriginalExtension();
-        //     $filename = 'mhs-'.time() . '.' . $extension;
-        //     $file->move(public_path().'/img',$filename);
-        //     $mahasiswa->foto = $filename;
-        // }else{
-        //     return $request;
-        //     $mahasiswa->foto = '';
-        // }
         $mahasiswa->save();
-
-        // Mahasiswa::create($validateData);
-        return redirect()->route('mahasiswas.index')->with('pesan',"Penambahan data {$validateData['nama']} berhasil");
+        
+        return redirect()->route('mahasiswas.index')->with('pesan',"Pengajuan aspirasi berhasil");
+    }
+    public function pengajuan(){
+        $users = User::all();
+        $mahasiswas = Mahasiswa::all();
+        return view('rekap-pengajuan',[
+            'users' => $users,
+            'mahasiswas' => $mahasiswas
+        ]);
     }
     public function show(Mahasiswa $mahasiswa){
-        //$result = Mahasiswa::findOrFail($mahasiswa);
-        return view('mahasiswa.show',['mahasiswa'=>$mahasiswa]);
+        return view('show',['mahasiswa'=>$mahasiswa]);
     }
     public function edit(Mahasiswa $mahasiswa){
         return view('mahasiswa.edit',['mahasiswa'=>$mahasiswa]);
@@ -122,7 +116,7 @@ class MahasiswaController extends Controller
     }
     public function destroy(Mahasiswa $mahasiswa){
         $mahasiswa->delete();
-        return redirect()->route('mahasiswas.index')->with('pesan',"Hapus data $mahasiswa->nama berhasil");
+        return redirect()->route('siasmades.pengajuan')->with('pesan',"Hapus data $mahasiswa->nama berhasil");
     }
     public function sortyharga(){
         $result = Mahasiswa::orderBy('harga', 'asc')->get();

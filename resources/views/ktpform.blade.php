@@ -1,5 +1,5 @@
-@extends('layout.member')
-@section('title', 'Member SIASMADES')
+@extends('layout.layout')
+@section('title', 'SIASMADES')
 
 @section('content')
 <div class="container pt-4 bg-white">
@@ -7,7 +7,7 @@
         <div class="col">
             <h1>FORM PENGAJUAN Surat Pengantar KTP</h1>
             <hr>
-            <form action="{{url('/form')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('mahasiswas.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
                 <div class="form-group">
                     <label for="nama">Nama Lengkap</label>
@@ -54,13 +54,6 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="tanggal_upload">Tanggal upload</label>
-                    <input type="text" name="tanggal_upload" id="tanggal_upload" class="form-control @error('tanggal_upload' )is-invalid @enderror" value="{{old('tanggal_upload')}}">
-                    @error('tanggal_upload')
-                        <div class="text-danger">{{$message}}</div>
-                    @enderror
-                </div>
-                <div class="form-group">
                     <label for="kategori">Kategori Pengajuan</label>
                     <input type="text" name="kategori" id="kategori" class="form-control @error('kategori' )is-invalid @enderror" value="Pengajuan Surat Pengantar KTP" readonly>
                 </div>
@@ -71,11 +64,24 @@
                         <div class="text-danger">{{$message}}</div>
                     @enderror
                 </div>
-                <a class="btn btn-warning mb-2" href="{{url('/')}}" role="button">Back</a>
-                <a class="btn btn-danger mb-2" href="{{url('/')}}" role="button">Hapus Form</a>
+                <a class="btn btn-warning mb-2" href="{{url('/')}}" role="button">Kembali</a>
+                <a class="btn btn-danger mb-2 text-white" onclick="javascript:clearForm();" role="button">Hapus Form</a>
                 <button type="submit" class="btn btn-primary mb-2 float-right">Kirim</button>
             </form>
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    function clearForm() {
+        document.getElementById("nama").value = "";
+        document.getElementById("nik").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("alamat").value = "";
+        document.getElementById("foto").value = "";
+        document.getElementById("lk").value = "";
+        document.getElementById("pr").value = "";
+	}
+</script>
+
 @endsection

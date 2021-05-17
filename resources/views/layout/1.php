@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -34,7 +34,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Member</sup></div>
+                <div class="sidebar-brand-text mx-3">Welcome</sup></div>
             </a>
 
             <!-- Divider -->
@@ -42,38 +42,36 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/mahasiswas">
-                    <span>Welcome</span></a>
+                <a class="nav-link" href="/admin">
+                <span>Welcome</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/pengajuan">
-                    <span>Pengajuan Anda</span></a>
+                <span>Rekap Aspirasi Masyarakat</span></a>
             </li>
-
+            
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Layanan
+                Fungsi
             </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/ktpform" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <span>Pengajuan Surat Pengantar Pembuatan KTP</span>
+                    <span>Urutkan berdasarkan kategori</span>
                 </a>
-                <a class="nav-link collapsed" href="/penghasilanform" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <span>Pengajuan SK Penghasilan</span>
+                    <span>Urutkan berdasarkan nama</span>
                 </a>
-                <a class="nav-link collapsed" href="/sktmform" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <span>Pengajuan SKTM</span>
+                    <span>Urutkan berdasarkan tanggal</span>
                 </a>
             </li>
-            
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -82,19 +80,15 @@
                 Aksi
             </div>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <span>Edit Profil</span>
-                </a>
                 <a class="nav-link collapsed" href="/logout" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <span>Logout</span>
                 </a>
             </li>
-        </ul>
 
+        </ul>
         <!-- End of Sidebar -->
-        
+
         <div id="content-wrapper" class="d-flex flex-column">
 
         <div class="content">
@@ -105,20 +99,6 @@
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                 <i class="fa fa-bars"></i>
             </button>
-
-            <!-- Topbar Search -->
-            <!-- <form
-                class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                        aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button">
-                            <i class="fas fa-search fa-sm"></i>
-                        </button>
-                    </div>
-                </div>
-            </form> -->
 
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
@@ -154,10 +134,32 @@
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Pepe</span>
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                         <img class="img-profile rounded-circle"
                             src="img/undraw_profile.svg">
                     </a>
+
+                    <!-- Dropdown - User Information -->
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                        aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#">
+                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Profile
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Settings
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Activity Log
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
+                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Logouts
+                        </a>
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -171,7 +173,7 @@
                 <div class="col-md-4 col-lg-4 footer-about wow fadeInUp">
                     <h3>Tentang kami</h3>
                     <p>
-                        SIASMADES adalah sebuah sistem informasi yang melayani para masyarakat desa untuk bisa menampung aspirasi dan mempermudah proses persuratan sehingga
+                        Siasmades adalah Sebuah Sistem informasi yang melayani para masyarakat desa untuk bisa menampung aspirasi dan memperbudah proses persuratan sehingga
                         aspirasi masyarakat desa bisa tersampaikan.
                     </p>
                 </div>
@@ -194,7 +196,7 @@
             </div>
         </div>
     </footer>
-
+    
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
