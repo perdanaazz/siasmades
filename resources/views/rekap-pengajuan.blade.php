@@ -33,7 +33,7 @@
       </thead>
       <tbody>
         @forelse ($mahasiswas as $mahasiswa)
-        <tr>
+        <tr class="text-center">
           <td>
               {{$mahasiswa->id}}
           </td>

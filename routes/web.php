@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 //Register & Login Routes
 Route::get('/', [AuthController::class, 'welcome'])->name('welcome');

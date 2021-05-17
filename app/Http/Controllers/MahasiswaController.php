@@ -73,9 +73,11 @@ class MahasiswaController extends Controller
         ]);
     }
     public function edit(Mahasiswa $mahasiswa){
+        $users = User::all();
         $mahasiswas = Mahasiswa::all();
-        return view('edit',[
-            'mahasiswa' => $mahasiswa
+        return view('show',[
+            'users' => $users,
+            'mahasiswas' => $mahasiswas
         ]);
     }
     public function destroy(Mahasiswa $mahasiswa){
@@ -168,5 +170,13 @@ class MahasiswaController extends Controller
         $users = User::all();
         $mahasiswas = Mahasiswa::all();
         return redirect()->route('siasmades.pengajuan')->with('pesandua',"Semua data pengajuan berhasil dihapus!");
+    }
+    public function download(){
+        $mahasiswa = new Mahasiswa();
+        try {
+            Storage::disk('local')->download('public/upload/$mahasiswa->foto');
+        } catch (\Exception $e) {
+            
+        }
     }
 }

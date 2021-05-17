@@ -2,30 +2,65 @@
 @section('title', 'SIASMADES')
 
 @section('content')
-<div class="container mt-3">
-    <div class="row">
-        <div class="col-12">
-            <div class="pt-3 d-flex justify-content-end align-items-center">
-                <h1 class="h2 mr-auto">Biodata</h1>
-            </div>
-            <hr>
-            @if(session()->has('pesan'))
-                <div class="alert alert-success">
-                    {{ session()->get('pesan') }}
-                </div>
-            @endif
-        </div>
-        <ul>
-            <img class="rounded-circle" width="100px" src="">
-            <br><br>
-            
-            <br>
-            <a href="{{url('/')}}" class="btn btn-primary" aria-disabled="true">Kembali</a>
-        </ul>
-    </div>
+<div class="container m-4">
+    <h1>DETAIL PENGAJUAN</h1>
+    @forelse($mahasiswas as $mahasiswa)
+    <table class="table text-left">
+        <tbody>
+            <tr>
+                <td>NIM</td>
+                <td>:</td>
+                <td>{{$mahasiswa->nik}}</td>
+            </tr>
+            <tr>
+                <td>Nama</td>
+                <td>:</td>
+                <td>{{$mahasiswa->nama}}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>:</td>
+                <td>{{$mahasiswa->email}}</td>
+            </tr>
+            <tr>
+                <td>Jenis kelamin</td>
+                <td>:</td>
+                <td>{{$mahasiswa->jenis_kelamin}}</td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td>:</td>
+                <td>{{$mahasiswa->alamat}}</td>
+            </tr>
+            <tr>
+                <td>Kategori</td>
+                <td>:</td>
+                <td>{{$mahasiswa->kategori}}</td>
+            </tr>
+            <tr>
+                <td>Berkas</td>
+                <td>:</td>
+                <td><img class="img-profile rounded-circle" src="{{ url('/img/'.$mahasiswa->foto) }}"></td>
+            </tr>
+        </tbody>
+    </table>
+    @empty
+    @endforelse
+    <a href="/" class="btn btn-primary text-center">Kembali</a>
 </div>
 @endsection
 
-@section('profil');
-
+@section('profile');
+<li class="nav-item dropdown no-arrow">
+    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+        @foreach ($users as $user)
+            {{ $user->name }}
+        </span>
+        <img class="img-profile rounded-circle"
+            src="{{ url('/img/avatar/'.$user->foto) }}">
+        @endforeach
+    </a>
+</li>
 @endsection
