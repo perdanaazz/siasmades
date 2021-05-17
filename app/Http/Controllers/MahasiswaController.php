@@ -82,6 +82,15 @@ class MahasiswaController extends Controller
         $mahasiswa->delete();
         return redirect()->route('siasmades.pengajuan')->with('pesandua',"Hapus data $mahasiswa->nama berhasil");
     }
+    public function search(Request $request){
+        $users = User::all();
+        $cari = $request->search;
+        $result = Mahasiswa::where('nama', 'like', "%".$cari."%")->paginate();
+        return view('rekap-pengajuan',[
+            'users' => $users,
+            'mahasiswas' => $result
+        ]);
+    }
     public function update(Request $request, Mahasiswa $mahasiswa){
         $validateData = $request->validate([
             'nik' => 'required|size:16|unique:mahasiswas',

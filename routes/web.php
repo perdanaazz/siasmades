@@ -28,7 +28,8 @@ Route::group(['middleware' => 'auth'],function(){
     Route::get('/siasmades-delete',[MahasiswaController::class, 'delete']);
     // Route::get('/editprofil', [MahasiswaController::class, 'editprofil'])->name('siasmades.editprofil');
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-    //fitur sorting
+    //fitur sorting AND search
+    Route::get('/search', [MahasiswaController::class, 'search']);
     Route::get('/sortbynama', [MahasiswaController::class, 'sortynama']);
     Route::get('/sortbytanggal', [MahasiswaController::class, 'sortytanggal']);
     Route::get('/sortbykategori', [MahasiswaController::class, 'sortykategori']);
