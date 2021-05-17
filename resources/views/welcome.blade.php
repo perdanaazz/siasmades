@@ -109,23 +109,23 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6 text-center">
                         <div class="mt-5">
-                            <i class="fas fa-4x fa-credit-card text-primary mb-4"></i>
+                            <i class="fas fa-4x fa-id-card text-primary mb-4"></i>
                             <h3 class="h4 mb-2">Pengajuan Surat Pengantar KTP</h3><br>
-                            <p class="text-muted mb-0">Proposal pembangunan desa bisa diajukan oleh seluruh masyarakat desa tanpa terkecuali.</p>
+                            <p class="text-muted mb-0">Bagi masyarakat desa yang ingin membuat KTP bisa mengajukan surat pengantar pembuatan KTP dari SIASMADES.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 text-center">
                         <div class="mt-5">
-                            <i class="fas fa-4x fa-graduation-cap text-primary mb-4"></i>
+                            <i class="fas fa-4x fa-money-check text-primary mb-4"></i>
                             <h3 class="h4 mb-2">Pengajuan Surat Keterangan Penghasilan</h3><br>
-                            <p class="text-muted mb-0">Bagi masyarakat yang berprestasi seperti pelajar bisa mengajukan apresiasi beasiswa kepada desa.</p>
+                            <p class="text-muted mb-0">Bagi masyarakat desa yang ingin membuat surat pernyataan penghasilan bisa mengirim berkas persyaratan dari SIASMADES.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 text-center">
                         <div class="mt-5">
                             <i class="fas fa-4x fa-credit-card text-primary mb-4"></i>
                             <h3 class="h4 mb-2">Pengajuan Surat Keterangan Tidak Mampu (SKTM)</h3><br>
-                            <p class="text-muted mb-0">Masyarakat yang kurang mampu dapat mengajukan bantuan lewat SIASMADES dengan syarat dan ketentuan yang berlaku.</p>
+                            <p class="text-muted mb-0">Bagi masyarakat desa yang kurang mampu dan ingin membuat surat keterangan tidak mampu bisa membuat surat keterangan tidak mampu lewat SIASMADES.</p>
                         </div>
                     </div>
                 </div>

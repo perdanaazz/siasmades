@@ -8,7 +8,7 @@
             <div class="col-7">
             @foreach ($users as $user)
                 <h1 class="display-4">SELAMAT DATANG DI SIASMADES, {{ $user->name }}</h1>
-                <p class="lead">Tes tes Informasi Masyarakat Desa untuk menyampaikan aspirasi berupa pengajuan surat pengantar KTP, surat keterangan penghasilan, dan surat keterangan tidak mampu.</p>
+                <p class="lead">Sistem Informasi Masyarakat Desa untuk menyampaikan aspirasi berupa pengajuan surat pengantar KTP, surat keterangan penghasilan, dan surat keterangan tidak mampu.</p>
                 <hr class="my-4">
             @endforeach
             </div>

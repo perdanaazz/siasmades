@@ -19,13 +19,14 @@ Route::group(['middleware' => 'auth'],function(){
     Route::view('/penghasilanform', 'penghasilanform');
     Route::view('/sktmform', 'sktmform');
     Route::get('/pengajuan', [MahasiswaController::class, 'pengajuan'])->name('siasmades.pengajuan');
-    //script
     Route::post('/mahasiswas',[MahasiswaController::class,'store'])->name('mahasiswas.store');
+    //fitur
     Route::get('/mahasiswas/{mahasiswa}',[MahasiswaController::class,'show'])->name('mahasiswas.show');
     Route::get('/mahasiswas/{mahasiswa}/edit',[MahasiswaController::class,'edit'])->name('mahasiswas.edit');
     Route::patch('/mahasiswas/{mahasiswa}',[MahasiswaController::class,'update'])->name('mahasiswas.update');
     Route::delete('/mahasiswas/{mahasiswa}',[MahasiswaController::class,'destroy'])->name('mahasiswas.destroy');
-    Route::get('/mahasiswas-delete',[MahasiswaController::class, 'delete']);
+    Route::get('/siasmades-delete',[MahasiswaController::class, 'delete']);
+    // Route::get('/editprofil', [MahasiswaController::class, 'editprofil'])->name('siasmades.editprofil');
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     //fitur sorting
     Route::get('/sortbynama', [MahasiswaController::class, 'sortynama']);

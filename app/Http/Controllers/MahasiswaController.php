@@ -54,7 +54,7 @@ class MahasiswaController extends Controller
         $mahasiswa->foto = $filename;
         $mahasiswa->save();
         
-        return redirect()->route('mahasiswas.index')->with('pesan',"Pengajuan aspirasi berhasil");
+        return redirect()->route('siasmades.pengajuan')->with('pesan',"Pengajuan aspirasi berhasil");
     }
     public function pengajuan(){
         $users = User::all();
@@ -65,19 +65,32 @@ class MahasiswaController extends Controller
         ]);
     }
     public function show(Mahasiswa $mahasiswa){
-        return view('show',['mahasiswa'=>$mahasiswa]);
+        $users = User::all();
+        $mahasiswas = Mahasiswa::all();
+        return view('show',[
+            'users' => $users,
+            'mahasiswas' => $mahasiswas
+        ]);
     }
     public function edit(Mahasiswa $mahasiswa){
-        return view('mahasiswa.edit',['mahasiswa'=>$mahasiswa]);
+        $mahasiswas = Mahasiswa::all();
+        return view('edit',[
+            'mahasiswa' => $mahasiswa
+        ]);
+    }
+    public function destroy(Mahasiswa $mahasiswa){
+        $mahasiswa->delete();
+        return redirect()->route('siasmades.pengajuan')->with('pesandua',"Hapus data $mahasiswa->nama berhasil");
     }
     public function update(Request $request, Mahasiswa $mahasiswa){
         $validateData = $request->validate([
-            'nim' => 'required|size:8|unique:mahasiswas,nim,'.$mahasiswa->id,
+            'nik' => 'required|size:16|unique:mahasiswas',
             'nama' => 'required|min:3|max:50',
-            // 'jenis_kelamin' => 'required|in:P,L',
-            // 'jurusan' => 'required',
-            // 'alamat' => 'required',
-            'harga' => 'required',
+            'email' => 'required',
+            'jenis_kelamin' => 'required|in:P,L',
+            'alamat' => 'required',
+            'kategori' => 'required',
+            'foto' => 'required|file|image|max:5000',
         ],
         [
             'required' => ':attribute wajib diisi',
@@ -88,13 +101,14 @@ class MahasiswaController extends Controller
             'file' => ':attribute harus diisi dengan file',
             'image' => ':attribute harus berupa gambar',
         ]);
-
-        // Mahasiswa::where('id',$mahasiswa->id)->update($validateData);
-        $mahasiswa->nim = $validateData['nim'];
+        $mahasiswa = new Mahasiswa();
+        $mahasiswa->nik = $validateData['nik'];
         $mahasiswa->nama = $validateData['nama'];
-        $mahasiswa->harga = $validateData['harga'];
-        // $mahasiswa->jurusan = $validateData['jurusan'];
-        // $mahasiswa->alamat = $validateData['alamat'];
+        $mahasiswa->email = $validateData['email'];
+        $mahasiswa->jenis_kelamin = $validateData['jenis_kelamin'];
+        $mahasiswa->alamat = $validateData['alamat'];
+        $mahasiswa->kategori = $validateData['kategori'];
+
         if($request->hasFile('foto')){
             $validateData = $request->validate([
                 'foto' => 'required|file|image|max:5000',
@@ -112,23 +126,38 @@ class MahasiswaController extends Controller
             $mahasiswa->foto = $filename;
         }
         $mahasiswa->save();
-        return redirect()->route('mahasiswas.show',['mahasiswa'=>$mahasiswa->id])->with('pesan',"Update data {$request->nama} berhasil");
+
+        return redirect()->route('siasmades.pengajuan')->with('pesan',"Update aspirasi berhasil");
+        // return redirect()->route('mahasiswas.show',['mahasiswa'=>$mahasiswa->id])->with('pesan',"Update data {$request->nama} berhasil");
     }
-    public function destroy(Mahasiswa $mahasiswa){
-        $mahasiswa->delete();
-        return redirect()->route('siasmades.pengajuan')->with('pesan',"Hapus data $mahasiswa->nama berhasil");
+    public function sortykategori(){
+        $users = User::all();
+        $result = Mahasiswa::orderBy('kategori', 'asc')->get();
+        return view('rekap-pengajuan',[
+            'users' => $users,
+            'mahasiswas' => $result
+        ]);
     }
-    public function sortyharga(){
-        $result = Mahasiswa::orderBy('harga', 'asc')->get();
-        return view('mahasiswa.index',['mahasiswas'=>$result]);
+    public function sortytanggal(){
+        $users = User::all();
+        $result = Mahasiswa::orderBy('created_at', 'asc')->get();
+        return view('rekap-pengajuan',[
+            'users' => $users,
+            'mahasiswas' => $result
+        ]);
     }
     public function sortynama(){
+        $users = User::all();
         $result = Mahasiswa::orderBy('nama', 'asc')->get();
-        return view('mahasiswa.index',['mahasiswas'=>$result]);
+        return view('rekap-pengajuan',[
+            'users' => $users,
+            'mahasiswas' => $result
+        ]);
     }
     public function delete(){
         $result = DB::statement("truncate mahasiswas");
-        $tampil = DB::select("SELECT * FROM mahasiswas");
-        return view('mahasiswa.index', ['mahasiswas'=>$tampil]);
+        $users = User::all();
+        $mahasiswas = Mahasiswa::all();
+        return redirect()->route('siasmades.pengajuan')->with('pesandua',"Semua data pengajuan berhasil dihapus!");
     }
 }
