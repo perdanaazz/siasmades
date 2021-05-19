@@ -35,11 +35,13 @@
                     <label>Jenis Kelamin</label>
                     <div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jenis_kelamin" id="lk" value="L" {{old('jenis_kelamin')=='L'?'checked':''}}>
+                            <input class="form-check-input" type="radio" name="jenis_kelamin" id="lk" value="L"
+                            {{ old('jenis_kelamin') ?? $mahasiswa->jenis_kelamin == 'L' ? 'checked': '' }}>
                             <label class="form-check-label" for="lk">Laki-laki</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jenis_kelamin" id="pr" value="P" {{old('jenis_kelamin')=='P'?'checked':''}}>
+                            <input class="form-check-input" type="radio" name="jenis_kelamin" id="pr" value="P"
+                            {{ old('jenis_kelamin') ?? $mahasiswa->jenis_kelamin == 'P' ? 'checked': '' }}>
                             <label class="form-check-label" for="pr">Perempuan</label>
                         </div>
                     </div>
@@ -49,7 +51,7 @@
                 </div>
                 <div class="form-group">
                     <label for="alamat">Alamat</label>
-                    <textarea class="form-control" name="alamat" id="alamat" rows="3" value="{{old('alamat') ?? $mahasiswa->alamat}}"></textarea>
+                    <textarea class="form-control" name="alamat" id="alamat" rows="3">{{ old('alamat') ?? $mahasiswa->alamat }}</textarea>
                     @error('alamat')
                         <div class="text-danger">{{$message}}</div>
                     @enderror
@@ -59,19 +61,22 @@
                         <label class="input-group-text" for="inputGroupSelect01">Pengajuan</label>
                     </div>
                     <select class="custom-select" id="kategori" name="kategori">
-                        <option value="Pengajuan Surat Pengantar KTP">Pengajuan Surat Pengantar KTP</option>
-                        <option value="Pengajuan Surat Keterangan Penghasilan">Pengajuan Surat Keterangan Penghasilan</option>
-                        <option value="Pengajuan Surat Keterangan Tidak Mampu">Pengajuan Surat Keterangan Tidak Mampu</option>
+                        <option value="Pengajuan Surat Pengantar KTP"
+                        {{ old('kategori') ?? $mahasiswa->kategori == 'Pengajuan Surat Pengantar KTP' ? 'selected' : '' }} >Pengajuan Surat Pengantar KTP</option>
+                        <option value="Pengajuan Surat Keterangan Penghasilan"
+                        {{ old('kategori') ?? $mahasiswa->kategori == "Pengajuan SK Penghasilan" ? 'selected' : '' }} >Pengajuan Surat Keterangan Penghasilan</option>
+                        <option value="Pengajuan Surat Keterangan Tidak Mampu"
+                        {{ old('kategori') ?? $mahasiswa->kategori == 'Pengajuan SKTM' ? 'selected' : '' }} >Pengajuan Surat Keterangan Tidak Mampu</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="foto">Upload KK</label>
-                    <input type="file" class="form-control-file @error('foto') is-invalid @enderror" name="foto" id="foto" value="{{old('foto')}}">
+                    <input type="file" class="form-control-file @error('foto') is-invalid @enderror" name="foto" id="foto" value="{{old('foto') ?? $mahasiswa->foto}}">
                     @error('foto')
                         <div class="text-danger">{{$message}}</div>
                     @enderror
                 </div>
-                <a class="btn btn-warning mb-2" href="{{url('/')}}" role="button">Kembali</a>
+                <a class="btn btn-warning mb-2" href="/pengajuan" role="button">Kembali</a>
                 <a class="btn btn-danger mb-2 text-white" onclick="javascript:clearForm();" role="button">Hapus Form</a>
                 <button type="submit" class="btn btn-primary mb-2 float-right">Kirim</button>
             </form>

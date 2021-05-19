@@ -50,12 +50,12 @@
               {{$mahasiswa->alamat}}
           </td>
           <td class="form-check form-check-inline">
-              <a href="{{ route('mahasiswas.edit',['mahasiswa'=>$mahasiswa->id]) }}" class="btn btn-warning">Edit</a>
-              <a href="{{ route('mahasiswas.show',['mahasiswa'=>$mahasiswa->id]) }}" class="btn btn-success">Detail</a>
+              <a href="{{ route('mahasiswas.edit',['mahasiswa'=>$mahasiswa->id]) }}" class="btn btn-warning fas fa-edit"></a>
+              <a href="{{ route('mahasiswas.show',['mahasiswa'=>$mahasiswa->id]) }}" class="btn btn-success fas fa-snowflake"></a>
               <form action="{{ route('mahasiswas.destroy',['mahasiswa'=>$mahasiswa->id]) }}" method="POST">
                 @method('DELETE')
                 @csrf
-                <button type="submit" class="btn btn-danger">Hapus</button>
+                <button type="submit" class="btn btn-danger fas fa-trash-alt"></button>
               </form>
           </td>
       <tr>
@@ -73,12 +73,8 @@
     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-        @foreach ($users as $user)
-            {{ $user->name }}
+        {{ Auth::user()->name }}
         </span>
-        <img class="img-profile rounded-circle"
-            src="{{ url('/img/avatar/'.$user->foto) }}">
-        @endforeach
     </a>
 </li>
 @endsection

@@ -2,11 +2,10 @@
 
 namespace App\Policies;
 
-use App\Models\Mahasiswa;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class AuthPolicy
+class AksesPolicy
 {
     use HandlesAuthorization;
 
@@ -17,9 +16,12 @@ class AuthPolicy
      */
     public function __construct()
     {
-        // 
+        //
     }
-    public function update (User $user, Mahasiswa $mahasiswa){
-        
+    public function akses_admin (User $user) {
+        return $user->id === 1;
+    }
+    public function akses_member (User $user) {
+        return $user->remember_token === NULL;
     }
 }

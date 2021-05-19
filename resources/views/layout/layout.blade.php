@@ -40,18 +40,24 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
+            @can('akses_admin', \App\Models\User::class)
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="/pengajuan">
                 <span>Rekap Aspirasi Masyarakat</span></a>
             </li>
+            @endcan
+
+            @can('akses_member', \App\Models\User::class)
             <li class="nav-item active">
                 <a class="nav-link" href="/pengajuan/member">
                 <span>Pengajuan Anda</span></a>
             </li>
+            @endcan
 
             <hr class="sidebar-divider">
 
+            @can('akses_admin', \App\Models\User::class)
             <div class="sidebar-heading">
                 Fungsi Admin
             </div>
@@ -73,10 +79,11 @@
                     <span>Hapus semua pengajuan</span>
                 </a>
             </li>
-
+            @endcan
             <!-- Divider -->
 
             <!-- Heading -->
+            @can('akses_member', \App\Models\User::class)
             <div class="sidebar-heading">
                 Layanan
             </div>
@@ -94,6 +101,7 @@
                     <span>Pengajuan SKTM</span>
                 </a>
             </li>
+            @endcan
 
             <!-- Heading -->
             <div class="sidebar-heading">

@@ -20,6 +20,7 @@ Route::group(['middleware' => 'auth'],function(){
     Route::view('/penghasilanform', 'penghasilanform');
     Route::view('/sktmform', 'sktmform');
     Route::get('/pengajuan', [MahasiswaController::class, 'pengajuan'])->name('siasmades.pengajuan');
+    Route::get('/pengajuan/member', [MahasiswaController::class, 'pengajuan'])->name('siasmades.pengajuanmember');
     Route::post('/mahasiswas',[MahasiswaController::class,'store'])->name('mahasiswas.store');
     //fitur
     Route::get('/mahasiswas/{mahasiswa}',[MahasiswaController::class,'show'])->name('mahasiswas.show');

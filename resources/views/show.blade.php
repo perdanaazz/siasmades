@@ -40,27 +40,23 @@
             <tr>
                 <td>Berkas</td>
                 <td>:</td>
-                <td><img class="img-profile rounded-circle" src="{{ url('/img/'.$mahasiswa->foto) }}"></td>
+                <td><img class="img-profile" src="{{ url('/img/'.$mahasiswa->foto) }}" height="500px"></td>
             </tr>
         </tbody>
     </table>
     @empty
     @endforelse
-    <a href="/" class="btn btn-primary text-center">Kembali</a>
+    <a href="/pengajuan" class="btn btn-primary text-center">Kembali</a>
 </div>
 @endsection
 
-@section('profile');
+@section('profile')
 <li class="nav-item dropdown no-arrow">
     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-        @foreach ($users as $user)
-            {{ $user->name }}
+            {{ Auth::user()->name }}
         </span>
-        <img class="img-profile rounded-circle"
-            src="{{ url('/img/avatar/'.$user->foto) }}">
-        @endforeach
     </a>
 </li>
 @endsection
