@@ -52,30 +52,29 @@
                             </div>
                             @endif
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" name="name" placeholder="Nama Lengkap">
+                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" name="name" placeholder="Nama Lengkap" value="{{ old('name') }}">
                                 </div>
                                 <hr>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" name="email"
-                                        placeholder="Alamat email">
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" name="email" placeholder="Alamat email" value="{{ old('email') }}">
                                 </div>
                                 <hr>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user" name="password"
-                                            id="exampleInputPassword" placeholder="Kata Sandi">
+                                            id="exampleInputPassword" placeholder="Kata Sandi" value="{{ old('password') }}">
                                     </div>
                                     <hr>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user" name="password_confirmation"
-                                            id="exampleRepeatPassword" placeholder="Ulangi Kata Sandi">
+                                            id="exampleRepeatPassword" placeholder="Ulangi Kata Sandi" value="{{ old('password_confirmation') }}">
                                     </div>
                                     <hr>
                                 </div>
                                 <hr>
                                 <div class="form-group">
                                     <label for="foto">Foto Profil</label>
-                                    <input type="file" class="form-control-file" name="foto" id="foto">
+                                    <input type="file" class="form-control-file" name="foto" id="foto" value="{{ old('foto') }}">
                                 </div>
                                 <hr>
                                 <button type="submit" class="btn btn-primary btn-user btn-block">

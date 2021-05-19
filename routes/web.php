@@ -20,7 +20,7 @@ Route::group(['middleware' => 'auth'],function(){
     Route::view('/penghasilanform', 'penghasilanform');
     Route::view('/sktmform', 'sktmform');
     Route::get('/pengajuan', [MahasiswaController::class, 'pengajuan'])->name('siasmades.pengajuan');
-    Route::get('/pengajuan/member', [MahasiswaController::class, 'pengajuan'])->name('siasmades.pengajuanmember');
+    Route::get('/pengajuan/member', [MahasiswaController::class, 'pengajuanmember'])->name('siasmades.pengajuanmember');
     Route::post('/mahasiswas',[MahasiswaController::class,'store'])->name('mahasiswas.store');
     //fitur
     Route::get('/mahasiswas/{mahasiswa}',[MahasiswaController::class,'show'])->name('mahasiswas.show');
@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth'],function(){
     Route::patch('/mahasiswas/{mahasiswa}',[MahasiswaController::class,'update'])->name('mahasiswas.update');
     Route::delete('/mahasiswas/{mahasiswa}',[MahasiswaController::class,'destroy'])->name('mahasiswas.destroy');
     Route::get('/siasmades-delete',[MahasiswaController::class, 'delete']);
-    // Route::get('/editprofil', [MahasiswaController::class, 'editprofil'])->name('siasmades.editprofil');
+    //Route::get('/editprofil', [AuthController::class, 'editprofil'])->name('siasmades.editprofil');
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     //fitur sorting AND search
     Route::get('/search', [MahasiswaController::class, 'search']);

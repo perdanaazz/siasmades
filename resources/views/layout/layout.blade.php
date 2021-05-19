@@ -192,8 +192,8 @@
                 <div class="col-md-4 col-lg-4 footer-about wow fadeInUp">
                     <h3>Tentang kami</h3>
                     <p>
-                        SIASMADES adalah sebuah sistem informasi yang melayani para masyarakat desa untuk bisa menampung aspirasi dan mempermudah proses persuratan sehingga
-                        aspirasi masyarakat desa bisa tersampaikan.
+                        SIASMADES adalah sebuah sistem informasi yang melayani para masyarakat desa untuk bisa menampung aspirasi dan mempermudah proses penyaluran aspirasi kepada pemerintah desa sehingga
+                        aspirasi bisa tersampaikan.
                     </p>
                 </div>
                 <div class="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown">

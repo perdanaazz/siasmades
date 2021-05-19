@@ -30,7 +30,7 @@
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card o-hidden border-0 shadow-lg" style="margin-top: 95px;">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
@@ -69,7 +69,7 @@
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user" name="email"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Masukkan alamat email">
+                                                placeholder="Masukkan alamat email" value="{{ old('email') }}">
                                         </div>
                                         <hr>
                                         <div class="form-group">
@@ -89,10 +89,10 @@
                                         </button>                                        
                                     </form>
                                     <hr>
-                                    <!-- <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                    </div> -->
-                                    <div class="text-center">
+                                    <div class="text-center d-inline float-left">
+                                        <a class="small" href="https://wa.me/6285851698583" target="blank">Forgot Password?</a>
+                                    </div>
+                                    <div class="text-center d-inline float-right">
                                         <a class="small" href="/register">Buat akun!</a>
                                     </div>
                                     <hr>

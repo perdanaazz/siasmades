@@ -42,6 +42,11 @@
                 <td>:</td>
                 <td><img class="img-profile" src="{{ url('/img/'.$mahasiswa->foto) }}" height="500px"></td>
             </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><a href="{{ url('/img/'.$mahasiswa->foto) }}" download="">Unduh berkas</a></td>
+            </tr>
         </tbody>
     </table>
     @empty
@@ -57,6 +62,7 @@
         <span class="mr-2 d-none d-lg-inline text-gray-600 small">
             {{ Auth::user()->name }}
         </span>
+        <img class="img-profile rounded-circle" src="{{ url('/img/avatar/'. Auth::user()->foto )}}">
     </a>
 </li>
 @endsection

@@ -11,8 +11,15 @@
             @csrf
                 <div class="form-group">
                     <label for="nama">Nama Lengkap</label>
-                    <input type="text" name="nama" id="nama" class="form-control @error('nama' )is-invalid @enderror" placeholder="Nama Lengkap"  value="{{old('nama')}}">
+                    <input type="text" name="nama" id="nama" class="form-control @error('nama' )is-invalid @enderror" placeholder="Nama Lengkap"  value="{{ Auth::user()->name }}" readonly>
                     @error('nama')
+                        <div class="text-danger">{{$message}}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" class="form-control @error('email' )is-invalid @enderror" placeholder="Email"  value="{{ Auth::user()->email }}">
+                    @error('email')
                         <div class="text-danger">{{$message}}</div>
                     @enderror
                 </div>
@@ -20,13 +27,6 @@
                     <label for="nik">NIK</label>
                     <input type="text" name="nik" id="nik" class="form-control @error('nik' )is-invalid @enderror" placeholder="NIK"  value="{{old('nik')}}">
                     @error('nik')
-                        <div class="text-danger">{{$message}}</div>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="email" class="form-control @error('email' )is-invalid @enderror" placeholder="Email"  value="{{old('email')}}">
-                    @error('email')
                         <div class="text-danger">{{$message}}</div>
                     @enderror
                 </div>

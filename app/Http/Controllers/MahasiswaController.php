@@ -24,7 +24,7 @@ class MahasiswaController extends Controller
     }
     public function store(Request $request){
         $validateData = $request->validate([
-            'nik' => 'required|size:16|unique:mahasiswas',
+            'nik' => 'required|size:16',
             'nama' => 'required|min:3|max:50',
             'email' => 'required',
             'jenis_kelamin' => 'required|in:P,L',
@@ -56,6 +56,14 @@ class MahasiswaController extends Controller
         $mahasiswa->save();
         
         return redirect()->route('siasmades.pengajuan')->with('pesan',"Pengajuan aspirasi berhasil");
+    }
+    public function pengajuanmember(){
+        $users = User::all();
+        $mahasiswas = Mahasiswa::where('email', Auth::user()->email)->get();
+        return view('rekap-pengajuan',[
+            'users' => $users,
+            'mahasiswas' => $mahasiswas
+        ]);
     }
     public function pengajuan(){
         $users = User::all();
@@ -141,21 +149,6 @@ class MahasiswaController extends Controller
         return redirect()->route('siasmades.pengajuan')->with('pesan',"Update aspirasi berhasil");
         // return redirect()->route('mahasiswas.show',['mahasiswa'=>$mahasiswa->id])->with('pesan',"Update data {$request->nama} berhasil");
     }
-    public function updateRow(Request $request){
-        DB::table('mahasiswas')->where('id', $request->id)->update([
-            'id'=>$request->id,
-            'nama'=>$request->nama,
-            'nim'=>$request->nim,
-            'tempat_lahir'=>$request->tempat_lahir,
-            'tanggal_lahir'=>$request->tanggal_lahir,
-            'jenis_kelamin'=>$request->jenis_kelamin,
-            'prodi'=>$request->prodi,
-            'email'=>$request->email,
-            'alamat'=>$request->alamat,
-            // 'picture'=>$request->picture,
-        ]);
-        return redirect('/');
-    }
     public function sortykategori(){
         $users = User::all();
         $result = Mahasiswa::orderBy('kategori', 'asc')->get();
@@ -185,13 +178,5 @@ class MahasiswaController extends Controller
         $users = User::all();
         $mahasiswas = Mahasiswa::all();
         return redirect()->route('siasmades.pengajuan')->with('pesandua',"Semua data pengajuan berhasil dihapus!");
-    }
-    public function download(){
-        $mahasiswa = new Mahasiswa();
-        try {
-            Storage::disk('local')->download('public/upload/$mahasiswa->foto');
-        } catch (\Exception $e) {
-            
-        }
     }
 }

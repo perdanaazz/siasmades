@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-7">
                 <h1 class="display-4">SELAMAT DATANG DI SIASMADES, {{ Auth::user()->name }}</h1>
-                <p class="lead">Sistem Informasi Masyarakat Desa untuk menyampaikan aspirasi berupa pengajuan surat pengantar KTP, surat keterangan penghasilan, dan surat keterangan tidak mampu.</p>
+                <p class="lead">Sistem Informasi Masyarakat Desa (SIASMADES) untuk menyampaikan aspirasi berupa saran dan masukan, pengajuan proposal pembangunan desa, pengajuan beasiswa prestasi, dan pengajuan bantuan masyarakat.</p>
                 <hr class="my-4">
             </div>
             <div class="col-5 text-center" >
@@ -26,6 +26,7 @@
         <span class="mr-2 d-none d-lg-inline text-gray-600 small">
             {{ Auth::user()->name }}
         </span>
+        <img class="img-profile rounded-circle" src="{{ url('/img/avatar/'. Auth::user()->foto )}}">
     </a>
 </li>
 @endsection

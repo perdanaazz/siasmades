@@ -12,7 +12,7 @@
             @csrf
                 <div class="form-group">
                     <label for="nama">Nama Lengkap</label>
-                    <input type="text" name="nama" id="nama" class="form-control @error('nama' )is-invalid @enderror" placeholder="Nama Lengkap" value="{{old('nama') ?? $mahasiswa->nama}}">
+                    <input type="text" name="nama" id="nama" class="form-control @error('nama' )is-invalid @enderror" placeholder="Nama Lengkap" value="{{old('nama') ?? $mahasiswa->nama}}" readonly>
                     @error('nama')
                         <div class="text-danger">{{$message}}</div>
                     @enderror
@@ -62,7 +62,7 @@
                     </div>
                     <select class="custom-select" id="kategori" name="kategori">
                         <option value="Pengajuan Surat Pengantar KTP"
-                        {{ old('kategori') ?? $mahasiswa->kategori == 'Pengajuan Surat Pengantar KTP' ? 'selected' : '' }} >Pengajuan Surat Pengantar KTP</option>
+                        {{ old('kategori') ?? $mahasiswa->kategori == 'Pengajuan Surat Pengantar KTP' ? 'selected' : '' }} >Pengajuan Proposal Pembangunan Desa</option>
                         <option value="Pengajuan Surat Keterangan Penghasilan"
                         {{ old('kategori') ?? $mahasiswa->kategori == "Pengajuan SK Penghasilan" ? 'selected' : '' }} >Pengajuan Surat Keterangan Penghasilan</option>
                         <option value="Pengajuan Surat Keterangan Tidak Mampu"
