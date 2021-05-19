@@ -62,7 +62,7 @@
                     </div>
                     <select class="custom-select" id="kategori" name="kategori">
                         <option value="Pengajuan Surat Pengantar KTP"
-                        {{ old('kategori') ?? $mahasiswa->kategori == 'Pengajuan Surat Pengantar KTP' ? 'selected' : '' }} >Pengajuan Proposal Pembangunan Desa</option>
+                        {{ old('kategori') ?? $mahasiswa->kategori == 'Pengajuan Surat Pengantar KTP' ? 'selected' : '' }} >Pengajuan Surat Pengantar KTP</option>
                         <option value="Pengajuan Surat Keterangan Penghasilan"
                         {{ old('kategori') ?? $mahasiswa->kategori == "Pengajuan SK Penghasilan" ? 'selected' : '' }} >Pengajuan Surat Keterangan Penghasilan</option>
                         <option value="Pengajuan Surat Keterangan Tidak Mampu"
