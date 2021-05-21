@@ -51,7 +51,7 @@
           </td>
           <td class="form-check form-check-inline">
               <a href="{{ route('mahasiswas.edit',['mahasiswa'=>$mahasiswa->id]) }}" class="btn btn-warning fas fa-edit"></a>
-              <a href="{{ route('mahasiswas.show',['mahasiswa'=>$mahasiswa->id]) }}" class="btn btn-success fas fa-snowflake"></a>
+              <a href="/mahasiswas/{{ $mahasiswa->id }}" class="btn btn-success fas fa-snowflake"></a>
               <form action="{{ route('mahasiswas.destroy',['mahasiswa'=>$mahasiswa->id]) }}" method="POST">
                 @method('DELETE')
                 @csrf
@@ -70,7 +70,7 @@
 
 @section('profile')
 <li class="nav-item dropdown no-arrow">
-    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+    <a class="nav-link dropdown-toggle" href="/siasmades" id="userDropdown" role="button"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="mr-2 d-none d-lg-inline text-gray-600 small">
         {{ Auth::user()->name }}

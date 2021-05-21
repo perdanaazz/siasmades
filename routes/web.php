@@ -23,7 +23,7 @@ Route::group(['middleware' => 'auth'],function(){
     Route::get('/pengajuan/member', [MahasiswaController::class, 'pengajuanmember'])->name('siasmades.pengajuanmember');
     Route::post('/mahasiswas',[MahasiswaController::class,'store'])->name('mahasiswas.store');
     //fitur
-    Route::get('/mahasiswas/{mahasiswa}',[MahasiswaController::class,'show'])->name('mahasiswas.show');
+    Route::get('/mahasiswas/{id}',[MahasiswaController::class,'show']);
     Route::get('/mahasiswas/{mahasiswa}/edit',[MahasiswaController::class,'edit'])->name('mahasiswas.edit');
     Route::patch('/mahasiswas/{mahasiswa}',[MahasiswaController::class,'update'])->name('mahasiswas.update');
     Route::delete('/mahasiswas/{mahasiswa}',[MahasiswaController::class,'destroy'])->name('mahasiswas.destroy');

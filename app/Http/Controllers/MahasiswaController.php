@@ -50,7 +50,7 @@ class MahasiswaController extends Controller
         $mahasiswa->kategori = $validateData['kategori'];
         $file = $validateData['foto'];
         $extension = $file->getClientOriginalExtension();
-        $filename = 'mhs-'.time() . '.' . $extension;
+        $filename = 'berkas-'. Auth::user()->name . '-' . time() . '.' . $extension;
         $file->move(public_path().'/img',$filename);
         $mahasiswa->foto = $filename;
         $mahasiswa->save();
@@ -73,9 +73,9 @@ class MahasiswaController extends Controller
             'mahasiswas' => $mahasiswas
         ]);
     }
-    public function show(Mahasiswa $mahasiswa){
+    public function show($id){
         $users = User::all();
-        $mahasiswas = Mahasiswa::all();
+        $mahasiswas = Mahasiswa::where('id', $id)->get();
         return view('show',[
             'users' => $users,
             'mahasiswas' => $mahasiswas
@@ -140,7 +140,7 @@ class MahasiswaController extends Controller
             ]); 
             $file = $validateData['foto'];
             $extension = $file->getClientOriginalExtension();
-            $filename = 'mhs-'.time() . '.' . $extension;
+            $filename = 'berkas-'. Auth::user()->name . '-' . time() . '.' . $extension;
             $file->move(public_path().'/img',$filename);
             $mahasiswa->foto = $filename;
         }
